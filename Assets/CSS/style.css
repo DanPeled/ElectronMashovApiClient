@@ -1,0 +1,181 @@
+/* Reset default margin and padding */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+li {
+    margin: 0;
+    padding: 0;
+}
+
+/* Dark theme for the entire page */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: #fff;
+}
+
+/* Header styling */
+header {
+    background-color: #0078d4;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+/* Container styling */
+.container {
+    max-width: 100%;
+    margin: 0;
+    padding: 10px;
+    background-color: #2d2d2d;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Label styling */
+label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+    color: #fff;
+    /* Add text color for labels */
+}
+
+/* Input styling */
+input[type="text"],
+input[type="number"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #444;
+    border-radius: 4px;
+    font-size: 18px;
+    background-color: #333;
+    color: #fff;
+}
+
+input[type="checkbox"] {
+    align-self: center;
+    width: 20px;
+    height: 20px;
+}
+
+button {
+    background-color: #0078d4;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+}
+
+button:disabled {
+    background-color: #444;
+    cursor: not-allowed;
+}
+
+button:hover {
+    background-color: #005a9e;
+}
+
+/* Table styling */
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 15px;
+    background-color: #333;
+    color: #fff;
+}
+
+th,
+td {
+    border: 1px solid #444;
+    text-align: left;
+    padding: 12px;
+    font-size: 18px;
+}
+
+/* Style the odd and even rows differently for better readability */
+tr:nth-child(even) {
+    background-color: #2d2d2d;
+}
+
+/* Grid container styling */
+.grid-container {
+    display: grid;
+    margin-top: 15px;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 15px;
+}
+
+.grid-container button {
+    height: 100px;
+}
+
+/* Login and after-login styling */
+#login {
+    display: block;
+}
+
+#after-login {
+    display: none;
+}
+
+/* Additional dark theme for specific elements */
+#timetableContainer,
+#gradesContainer,
+#homeworkContainer,
+#behavingContainer {
+    background-color: #333;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    color: #fff;
+}
+
+/* Logout button styling */
+#logoutButton {
+    background-color: #c20202;
+    color: #fff;
+}
+
+#logoutButton:hover {
+    background-color: #ff0000;
+}
+
+th {
+    background-color: rgb(38, 35, 35);
+}
+
+/* Media query for smaller screens */
+@media screen and (max-width: 768px) {
+
+    input[type="text"],
+    input[type="number"],
+    input[type="password"],
+    button,
+    th,
+    td,
+    h1,
+    label {
+        font-size: 30px;
+    }
+
+    table {
+        margin-top: 10px;
+    }
+
+    .grid-container {
+        margin-top: 10px;
+        grid-gap: 10px;
+    }
+}

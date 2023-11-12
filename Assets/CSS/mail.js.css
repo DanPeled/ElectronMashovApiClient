@@ -1,0 +1,22 @@
+body,
+h1,
+p,
+button {
+    margin: 0;
+    padding: 0;
+}
+
+/* Define styles for the mailDiv */
+#mailDiv {
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin: 20px;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    color: black;
+}
+
+#mailSubject {
+    text-align: center;
+}

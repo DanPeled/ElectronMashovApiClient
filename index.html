@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Mashov</title>
+    <link rel="stylesheet" href="Assets/CSS/style.css">
+</head>
+
+<body>
+    <header>
+        <h1 style="display: inline;">Mashov </h1>
+        <p id="displayName"></p>
+    </header>
+    <div class="container">
+        <div id="login">
+            <label for="schoolInput">Enter School:</label>
+            <input type="text" id="schoolInput" list="schoolList" placeholder="Enter school name" required>
+            <datalist id="schoolList">
+            </datalist><br><br>
+
+            <!-- Input fields for other login values -->
+            <label for="year">Year:</label>
+            <input type="number" id="year" value="2024" inputmode="numeric" required><br><br>
+            <label for="username">Username:</label>
+            <input type="text" id="username" required><br><br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" required><br><br>
+            <label for="remember-me" style="display: inline;">Remember me: </label>
+            <input type="checkbox" id="remember-me"><br><br>
+            <button id="showPasswordButton">Show Password</button>
+            <button id="loginButton">Login</button>
+        </div>
+        <div id="after-login">
+            <div class="grid-container">
+                <button id="timeTableButton">Timetable</button>
+                <button id="getGradesButton">Grades</button>
+                <button id="getHomeworkButton">Homework</button>
+                <button id="getBehavingsButton">Behaving</button>
+                <button id="getMessagesButton">Messages</button>
+            </div>
+
+            <div id="timetableContainer">
+                <!-- Timetable tables will be appended here -->
+            </div>
+            <button id="prevDayButton">Previous Day</button>
+            <button id="nextDayButton">Next Day</button>
+            <div id="gradesContainer">
+                <!-- Grades will be displayed here -->
+            </div>
+            <div id="homeworkContainer"></div>
+            <div id="behavingContainer"></div>
+            <div id="messagesListContainer"></div>
+            <button id="logoutButton">Logout</button>
+        </div>
+    </div>
+    <script src="Assets/JS/index.js"></script>
+    <script type="module" src="Assets/JS/renderer.js"></script>
+</body>
+
+</html>

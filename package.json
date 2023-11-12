@@ -1,0 +1,58 @@
+{
+  "name": "mashovapi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron . --no-sandbox",
+    "build": "electron-builder"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^26.2.2"
+  },
+  "dependencies": {
+    "@capacitor/android": "^5.4.1",
+    "mashov-api": "^1.0.0"
+  },
+  "build": {
+    "appId": "com.mashov",
+    "productName": "Mashov",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "**/*"
+    ],
+    "asar": true,
+    "extraResources": [
+      {
+        "from": "./resources",
+        "to": "./resources",
+        "filter": [
+          "**/*"
+        ]
+      }
+    ],
+    "linux": {
+      "target": [
+        "AppImage"
+      ],
+      "icon": "./resources/icon.png"
+    },
+    "win": {
+      "target": [
+        "nsis"
+      ],
+      "icon": "./resources/icon.ico"
+    },
+    "mac": {
+      "target": [
+        "dmg"
+      ],
+      "icon": "./resources/icon.icns"
+    }
+  }
+}
