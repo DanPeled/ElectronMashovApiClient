@@ -23,8 +23,8 @@ export const loginToMashov = async function (semel, year, username, password) {
 export const getTestData = async function (loginInfo) {
   loginInfo[2] = await loginInfo[2].json();
   loginInfo[2] = loginInfo[2].credential.userId;
-  
-  return fetch("https://web.mashov.info/students/ngsw.json?ngsw-cache-bust=0.4396694601112072", {
+  console.log(loginInfo[2]);
+  return fetch(`https://web.mashov.info/api/students/${loginInfo[2]}/homework`, {
     "headers": {
       "accept": "application/json, text/plain, */*",
       "accept-language": "he-IL,he;q=0.9,en-US;q=0.8,en;q=0.7",
@@ -45,7 +45,7 @@ export const getTestData = async function (loginInfo) {
     .then(res => res.json()) // expecting a json response
     .then(json => { return json });
 }
-export const getBirthday = async function(loginInfo){
+export const getBirthday = async function (loginInfo) {
   loginInfo[2] = await loginInfo[2].json();
   loginInfo[2] = loginInfo[2].credential.userId;
   return fetch("https://web.mashov.info/api/user/" + loginInfo[2] + "/birthday", {

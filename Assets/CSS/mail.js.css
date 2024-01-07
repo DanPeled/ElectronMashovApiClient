@@ -20,3 +20,7 @@ button {
 #mailSubject {
     text-align: center;
 }
+
+body {
+    background-color: rgb(29, 29, 41);
+}

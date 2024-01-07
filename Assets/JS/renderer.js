@@ -75,7 +75,6 @@ async function login() {
         displayName = displayName.displayName;
 
         loginInfo = await mashov.loginToMashov(semel, year, username, password);
-
         document.getElementById("displayName").innerHTML = (displayName);
         document.getElementById('after-login').style.display = "block";
         document.getElementById('login').style.display = "none";
@@ -193,7 +192,7 @@ document.getElementById('getGradesButton').addEventListener('click', async () =>
 
     try {
         const grades = await mashov.get(loginInfo, 'grades');
-
+        console.log(grades);
         gradesContainer.style.display = 'block';
 
         gradesContainer.innerHTML = '';
@@ -368,6 +367,7 @@ prevDayButton.addEventListener('click', () => {
 });
 
 function displayTimetableForCurrentDay() {
+    const days = ["Sunday", "Monday", "Tuesday", "Wednsday", "Thursday", "Friday", "Saturday"];
     daysArray.sort();
 
     const currentDay = daysArray[currentDayIndex];
@@ -377,12 +377,13 @@ function displayTimetableForCurrentDay() {
     currentDayTimetable.sort((a, b) => {
         return parseInt(a.timeTable.lesson) - parseInt(b.timeTable.lesson);
     });
-
+    const div = document.createElement('div');
+    div.innerHTML = `<h1>${days[currentDayIndex]}</h1>`;
     const dayTable = document.createElement('table');
+    div.appendChild(dayTable);
     dayTable.innerHTML = `
         <thead>
             <tr>
-                <th>Day</th>
                 <th>Lesson</th>
                 <th>Room</th>
                 <th>Subject</th>
@@ -394,13 +395,12 @@ function displayTimetableForCurrentDay() {
     `;
 
     timetableContainer.innerHTML = '';
-    timetableContainer.appendChild(dayTable);
+    timetableContainer.appendChild(div);
 
     const currentDayTableBody = document.getElementById('currentDayTimetable');
     currentDayTimetable.forEach(item => {
         const row = document.createElement('tr');
         row.innerHTML = `
-            <td>${item.timeTable.day}</td>
             <td>${item.timeTable.lesson}</td>
             <td>${item.timeTable.roomNum}</td>
             <td>${item.groupDetails.subjectName}</td>
